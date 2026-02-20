@@ -1,8 +1,9 @@
-# 🔥 SOC Firewall Log Analysis using Splunk SIEM
+# 🛡️ SOC Firewall Log Analysis using Splunk
 
 ## 📌 Project Overview
-This project demonstrates real-world firewall log analysis using Splunk SIEM.  
-The objective is to detect suspicious IP activity, blocked traffic patterns, and port scanning behavior using SOC investigation queries.
+This project demonstrates firewall log analysis using Splunk SIEM to detect suspicious IP activity, blocked traffic patterns, and port scanning behavior.
+
+This project simulates a real Security Operations Center (SOC) workflow for firewall log monitoring and threat detection using Splunk SIEM.
 
 ## 🛠️ Tools & Technologies
 - Splunk Enterprise (SIEM)
@@ -51,12 +52,12 @@ index=firewall (dest_port=22 OR dest_port=3389 OR dest_port=445)
 ```
 
 ## 📊 SOC Skills Demonstrated
-- SIEM Log Ingestion (Custom Index Creation)
-- Firewall Log Analysis
-- Threat Detection using SPL Queries
-- Port Scanning Identification
-- Suspicious IP Investigation
-- SOC Analyst Investigation Workflow
+- SIEM Log Analysis (Splunk)
+- Firewall Log Monitoring
+- SPL Query Development
+- Threat Detection & Investigation
+- SOC Analyst Use Cases
+- Security Event Analysis
 
 ## 📸 Screenshots
 Screenshots of data ingestion, firewall log analysis, and detection queries are included in the screenshots folder as proof of hands-on lab.
