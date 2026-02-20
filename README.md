@@ -11,7 +11,7 @@ This project simulates a real Security Operations Center (SOC) workflow for fire
 - Windows VM Lab Environment
 - Firewall Log Dataset (CSV)
 - GitHub (Project Documentation)
-- 
+  
 ## 📂 Project Structure
 - firewall_logs.csv → Sample firewall dataset
 - queries.txt → SOC detection queries
