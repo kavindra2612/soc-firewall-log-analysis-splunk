@@ -19,37 +19,36 @@ The objective is to detect suspicious IP activity, blocked traffic patterns, and
 These queries simulate real SOC L1 analyst investigations:
 
 ### 1. Top Suspicious Source IP Detection
-
+```spl
 index=firewall | stats count by src_ip | sort -count
-
+```
 
 ### 2. Blocked vs Allowed Traffic Monitoring
-
+```spl
 index=firewall | stats count by action
-
+```
 
 ### 3. Most Targeted Ports Analysis
-
+```spl
 index=firewall | stats count by dest_port | sort -count
-
+```
 
 ### 4. Port Scanning Detection (Nmap Behavior)
-
+```spl
 index=firewall | stats dc(dest_port) as unique_ports by src_ip | where unique_ports > 5
-
+```
 
 ### 5. Suspicious Blocked IP Investigation
-
-
+```spl
 index=firewall action=blocked | stats count by src_ip | sort -count
-
+```
 
 ## 🧠 Additional Investigation Queries (Optional)
-
+```
 index=firewall | timechart count by action
 index=firewall | stats count by src_ip, dest_ip
 index=firewall (dest_port=22 OR dest_port=3389 OR dest_port=445)
-
+```
 
 ## 📊 SOC Skills Demonstrated
 - SIEM Log Ingestion (Custom Index Creation)
