@@ -1,0 +1,16 @@
+# Splunk Firewall Log Analysis Queries (SOC Use Cases)
+
+1. Top Suspicious Source IP
+index=firewall | stats count by src_ip | sort -count
+
+2. Blocked Traffic Monitoring
+index=firewall | stats count by action
+
+3. Most Targeted Ports Detection
+index=firewall | stats count by dest_port | sort -count
+
+4. Port Scanning Detection (Nmap Behavior)
+index=firewall | stats dc(dest_port) as unique_ports by src_ip | where unique_ports > 5
+
+5. Suspicious Blocked IP Investigation
+index=firewall action=blocked | stats count by src_ip | sort -count
