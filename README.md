@@ -63,5 +63,5 @@ index=firewall (dest_port=22 OR dest_port=3389 OR dest_port=445)
 Screenshots of data ingestion, firewall log analysis, and detection queries are included in the screenshots folder as proof of hands-on lab.
 
 ## 🎯 Author
-- Kavindra Patel  
-Aspiring SOC Analyst | Cybersecurity Student
+## - Kavindra Patel  
+## Aspiring SOC Analyst | Cybersecurity Student
