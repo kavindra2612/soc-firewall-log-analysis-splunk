@@ -62,6 +62,15 @@ index=firewall (dest_port=22 OR dest_port=3389 OR dest_port=445)
 ## 📸 Screenshots
 Screenshots of data ingestion, firewall log analysis, and detection queries are included in the screenshots folder as proof of hands-on lab.
 
+### 🔥 1. Top Suspicious Source IP Detection
+This query identifies the most active and potentially suspicious source IP addresses.
+
+```spl
+index=firewall | stats count by src_ip | sort -count
+<img src="screenshots/top_suspicious_source_ip.png" width="700"/>
+```
+
+
 ## 🎯 Author
 ## - Kavindra Patel  
 ## Aspiring SOC Analyst | Cybersecurity Student
