@@ -68,9 +68,45 @@ This query identifies the most active and potentially suspicious source IP addre
 ```spl
 index=firewall | stats count by src_ip | sort -count
 ```
-<img src="Screenshots/Top Suspicious Source IP.png" width="700"/>
+<img src="screenshots/Top Suspicious Source IP.png" width="700"/>
 
+🚨 2. Blocked Traffic Analysis
 
+This query shows allowed vs blocked traffic by the firewall.
+```spl
+index=firewall | stats count by action
+```
+<img src="screenshots/Blocked Traffic Analysis.png" width="700"/>
+
+🌐 3. Most Targeted Ports Detection
+
+This query identifies the most frequently targeted destination ports.
+
+```spl
+index=firewall | stats count by dest_port | sort -count
+```
+<img src="screenshots/Most Targeted Ports.png" width="700"/>
+
+💀 4. Port Scanning Detection (Nmap Behavior)
+
+This query detects IPs accessing multiple unique ports (possible scanning activity).
+```spl
+index=firewall 
+| stats dc(dest_port) as unique_ports by src_ip 
+| where unique_ports > 5
+```
+<img src="screenshots/Port Scanning Detection.png" width="700"/>
+
+🧠 5. Suspicious Blocked IP Investigation
+
+This query highlights source IPs that were blocked multiple times.
+
+```
+index=firewall action=blocked 
+| stats count by src_ip 
+| sort -count
+```
+<img src="screenshots/Blocked Suspicious IP Investigation.png" width="700"/> 
 
 ## 🎯 Author
 ## - Kavindra Patel  
