@@ -67,8 +67,9 @@ This query identifies the most active and potentially suspicious source IP addre
 
 ```spl
 index=firewall | stats count by src_ip | sort -count
-<img src="screenshots/top_suspicious_source_ip.png" width="700"/>
 ```
+<img src="Screenshots/Top Suspicious Source IP.png" width="700"/>
+
 
 
 ## 🎯 Author
